@@ -26,20 +26,20 @@ class HourlyForcastitem extends StatelessWidget {
           children: [
             Text(
               time,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Icon(
               icon,
               size: 30,
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               value,
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.white,
                   fontSize: 16,
                   fontWeight: FontWeight.w500),
