@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:weather_app/hourly_forcast_item.dart';
 
 class WeatherScreen extends StatelessWidget {
   const WeatherScreen({super.key});
@@ -141,7 +142,7 @@ class WeatherScreen extends StatelessWidget {
                           Text(
                             "94",
                             style: TextStyle(
-                              fontSize: 30,
+                              fontSize: 24,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -174,7 +175,7 @@ class WeatherScreen extends StatelessWidget {
                           Text(
                             "7.67",
                             style: TextStyle(
-                              fontSize: 30,
+                              fontSize: 24,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -206,7 +207,7 @@ class WeatherScreen extends StatelessWidget {
                           Text(
                             "1006",
                             style: TextStyle(
-                              fontSize: 30,
+                              fontSize: 24,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -222,47 +223,5 @@ class WeatherScreen extends StatelessWidget {
       ),
     );
     // return const ;
-  }
-}
-
-class HourlyForcastitem extends StatelessWidget {
-  const HourlyForcastitem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 6,
-      child: Container(
-        width: 100,
-        padding: const EdgeInsets.all(8.0),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: const Column(
-          children: [
-            Text(
-              "9:00am",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 10),
-            Icon(
-              Icons.cloud,
-              size: 30,
-            ),
-            SizedBox(height: 10),
-            Text(
-              "301.17",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500),
-            ),
-          ],
-        ),
-      ),
-    );
   }
 }
