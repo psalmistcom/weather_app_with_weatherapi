@@ -96,11 +96,31 @@ class WeatherScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    HourlyForcastitem(),
-                    HourlyForcastitem(),
-                    HourlyForcastitem(),
-                    HourlyForcastitem(),
-                    HourlyForcastitem(),
+                    HourlyForcastitem(
+                      time: "9:00am",
+                      value: "301.17",
+                      icon: Icons.cloud,
+                    ),
+                    HourlyForcastitem(
+                      time: "8:00am",
+                      value: "301.17",
+                      icon: Icons.cloud,
+                    ),
+                    HourlyForcastitem(
+                      time: "9:00pm",
+                      value: "301.17",
+                      icon: Icons.cloud,
+                    ),
+                    HourlyForcastitem(
+                      time: "11:00pm",
+                      value: "301.17",
+                      icon: Icons.cloud,
+                    ),
+                    HourlyForcastitem(
+                      time: "2:00pm",
+                      value: "88.17",
+                      icon: Icons.sunny,
+                    ),
                   ],
                 ),
               ),
@@ -125,12 +145,12 @@ class WeatherScreen extends StatelessWidget {
                     value: "91",
                   ),
                   AddtionalInfoItem(
-                    icon: Icons.water_drop,
+                    icon: Icons.air,
                     label: "Wind Speed",
                     value: "7.67",
                   ),
                   AddtionalInfoItem(
-                    icon: Icons.water_drop,
+                    icon: Icons.beach_access,
                     label: "Pressure",
                     value: "1006",
                   ),
