@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:weather_app/additional_info_item.dart';
 import 'package:weather_app/hourly_forcast_item.dart';
 
 class WeatherScreen extends StatelessWidget {
@@ -114,109 +115,129 @@ class WeatherScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              // const SizedBox(height: 2),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
+              const SizedBox(height: 8),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Card(
-                    elevation: 0,
-                    child: Container(
-                      width: 115,
-                      padding: const EdgeInsets.all(8.0),
-                      child: const Column(
-                        children: [
-                          Icon(
-                            Icons.water_drop,
-                            size: 30,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            "Humidity",
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          Text(
-                            "94",
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                  AddtionalInfoItem(
+                    icon: Icons.water_drop,
+                    label: "Humidity",
+                    value: "91",
                   ),
-                  //wind speed
-                  Card(
-                    elevation: 0,
-                    child: Container(
-                      width: 115,
-                      padding: const EdgeInsets.all(8.0),
-                      child: const Column(
-                        children: [
-                          Icon(
-                            Icons.wind_power,
-                            size: 30,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            "Wind Speed",
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          Text(
-                            "7.67",
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                  AddtionalInfoItem(
+                    icon: Icons.water_drop,
+                    label: "Wind Speed",
+                    value: "7.67",
                   ),
-                  Card(
-                    elevation: 0,
-                    child: Container(
-                      width: 115,
-                      padding: const EdgeInsets.all(8.0),
-                      child: const Column(
-                        children: [
-                          Icon(
-                            Icons.umbrella,
-                            size: 30,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            "Pressure",
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          Text(
-                            "1006",
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                  AddtionalInfoItem(
+                    icon: Icons.water_drop,
+                    label: "Pressure",
+                    value: "1006",
                   ),
                 ],
               ),
+              // Row(
+              //   crossAxisAlignment: CrossAxisAlignment.center,
+              //   children: [
+              //     Card(
+              //       elevation: 0,
+              //       child: Container(
+              //         width: 115,
+              //         padding: const EdgeInsets.all(8.0),
+              //         child: const Column(
+              //           children: [
+              //             Icon(
+              //               Icons.water_drop,
+              //               size: 30,
+              //             ),
+              //             SizedBox(
+              //               height: 10,
+              //             ),
+              //             Text(
+              //               "Humidity",
+              //               style: TextStyle(
+              //                 fontSize: 16,
+              //                 fontWeight: FontWeight.w500,
+              //               ),
+              //             ),
+              //             Text(
+              //               "94",
+              //               style: TextStyle(
+              //                 fontSize: 24,
+              //                 fontWeight: FontWeight.bold,
+              //               ),
+              //             ),
+              //           ],
+              //         ),
+              //       ),
+              //     ),
+              //     //wind speed
+              //     Card(
+              //       elevation: 0,
+              //       child: Container(
+              //         width: 115,
+              //         padding: const EdgeInsets.all(8.0),
+              //         child: const Column(
+              //           children: [
+              //             Icon(
+              //               Icons.wind_power,
+              //               size: 30,
+              //             ),
+              //             SizedBox(
+              //               height: 10,
+              //             ),
+              //             Text(
+              //               "Wind Speed",
+              //               style: TextStyle(
+              //                 fontSize: 16,
+              //                 fontWeight: FontWeight.w500,
+              //               ),
+              //             ),
+              //             Text(
+              //               "7.67",
+              //               style: TextStyle(
+              //                 fontSize: 24,
+              //                 fontWeight: FontWeight.bold,
+              //               ),
+              //             ),
+              //           ],
+              //         ),
+              //       ),
+              //     ),
+              //     Card(
+              //       elevation: 0,
+              //       child: Container(
+              //         width: 115,
+              //         padding: const EdgeInsets.all(8.0),
+              //         child: const Column(
+              //           children: [
+              //             Icon(
+              //               Icons.umbrella,
+              //               size: 30,
+              //             ),
+              //             SizedBox(
+              //               height: 10,
+              //             ),
+              //             Text(
+              //               "Pressure",
+              //               style: TextStyle(
+              //                 fontSize: 16,
+              //                 fontWeight: FontWeight.w500,
+              //               ),
+              //             ),
+              //             Text(
+              //               "1006",
+              //               style: TextStyle(
+              //                 fontSize: 24,
+              //                 fontWeight: FontWeight.bold,
+              //               ),
+              //             ),
+              //           ],
+              //         ),
+              //       ),
+              //     ),
+              //   ],
+              // ),
             ],
           ),
         ),
