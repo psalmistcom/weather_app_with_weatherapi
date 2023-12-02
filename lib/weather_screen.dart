@@ -151,26 +151,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  // const SizedBox(height: 2),
-                  // SingleChildScrollView(
-                  //   scrollDirection: Axis.horizontal,
-                  //   child: Row(
-                  //     children: [
-                  //       for (int i = 0; i < 35; i++)
-                  //         HourlyForcastitem(
-                  //           time: data['list'][i + 1]['dt'].toString(),
-                  //           value:
-                  //               data['list'][i + 1]['main']['temp'].toString(),
-                  //           icon: data['list'][i + 1]['weather'][0]['main'] ==
-                  //                       "Clouds" ||
-                  //                   data['list'][i + 1]['weather'][0]['main'] ==
-                  //                       "Rain"
-                  //               ? Icons.cloud
-                  //               : Icons.sunny,
-                  //         ),
-                  //     ],
-                  //   ),
-                  // ),
                   SizedBox(
                     height: 130,
                     child: ListView.builder(
