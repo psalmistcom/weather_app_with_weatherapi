@@ -82,6 +82,10 @@ class _WeatherScreenState extends State<WeatherScreen> {
           final currentTemp = currentWeatherData['main']['temp'];
           final currentSky = currentWeatherData['weather'][0]['main'];
 
+          final currentPressure = currentWeatherData['main']['pressure'];
+          final currentHumidity = currentWeatherData['main']['humidity'];
+          final currentWindSpeed = currentWeatherData['wind']['speed'];
+
           return SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Padding(
@@ -140,7 +144,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   const SizedBox(height: 20),
                   // Weather forcast
                   const Text(
-                    "Weather Forcast",
+                    "Hourly Forcast",
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -191,23 +195,23 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       AddtionalInfoItem(
                         icon: Icons.water_drop,
                         label: "Humidity",
-                        value: "91",
+                        value: currentHumidity.toString(),
                       ),
                       AddtionalInfoItem(
                         icon: Icons.air,
                         label: "Wind Speed",
-                        value: "7.67",
+                        value: currentWindSpeed.toString(),
                       ),
                       AddtionalInfoItem(
                         icon: Icons.beach_access,
                         label: "Pressure",
-                        value: "1006",
+                        value: currentPressure.toString(),
                       ),
                     ],
                   ),
