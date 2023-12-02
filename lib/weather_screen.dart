@@ -15,7 +15,7 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherScreenState extends State<WeatherScreen> {
-  Future getCurrentWeather() async {
+  Future<Map<String, dynamic>> getCurrentWeather() async {
     try {
       String cityName = "London";
       final res = await http.get(
@@ -32,7 +32,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
       }
 
       return data;
-      // data['list'][0]['main']['temp'];
     } catch (e) {
       throw e.toString();
     }
@@ -66,15 +65,23 @@ class _WeatherScreenState extends State<WeatherScreen> {
         future: getCurrentWeather(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const LinearProgressIndicator(
-              backgroundColor: Color.fromARGB(251, 150, 90, 1),
-              color: Color.fromARGB(253, 241, 181, 0),
+            return const Center(
+              child: CircularProgressIndicator.adaptive(),
             );
           }
 
           if (snapshot.hasError) {
-            return Text(snapshot.error.toString());
+            return Center(child: Text(snapshot.error.toString()));
           }
+
+          if (snapshot.hasData) {}
+          final data = snapshot.data!;
+
+          final currentWeatherData = data['list'][0];
+
+          final currentTemp = currentWeatherData['main']['temp'];
+          final currentSky = currentWeatherData['weather'][0]['main'];
+
           return SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Padding(
@@ -102,21 +109,23 @@ class _WeatherScreenState extends State<WeatherScreen> {
                             child: Column(
                               children: [
                                 Text(
-                                  "200 °K",
+                                  "$currentTemp °K",
                                   style: const TextStyle(
                                     fontSize: 32,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
                                 const SizedBox(height: 16),
-                                const Icon(
-                                  Icons.cloud,
+                                Icon(
+                                  currentSky == 'Clouds' || currentSky == 'Rain'
+                                      ? Icons.cloud
+                                      : Icons.sunny,
                                   size: 64,
                                 ),
                                 const SizedBox(height: 16),
-                                const Text(
-                                  "Rain",
-                                  style: TextStyle(
+                                Text(
+                                  "$currentSky",
+                                  style: const TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.w500,
                                   ),
